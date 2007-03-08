@@ -17,8 +17,7 @@ xs_detect(cascade_name, filename)
     PREINIT:
         CvHaarClassifierCascade *cascade;
         IplImage *img, *gray, *small_img;
-        int i, width_limit, height_limit;
-        double scale_w, scale_h, scale;
+        int i;
         CvMemStorage *storage;
         CvSeq *objects;
         CvRect *rect;
@@ -44,10 +43,10 @@ xs_detect(cascade_name, filename)
         for (i = 0; i < (objects ? objects->total : 0); i++) {
             rect = (CvRect*) cvGetSeqElem(objects, i);
             hash = newHV();
-            hv_store(hash, "x", 1, newSViv(rect->x * scale), 0);
-            hv_store(hash, "y", 1, newSViv(rect->y * scale), 0);
-            hv_store(hash, "width", 5, newSViv(rect->width * scale), 0);
-            hv_store(hash, "height", 6, newSViv(rect->height * scale), 0);
+            hv_store(hash, "x", 1, newSViv(rect->x), 0);
+            hv_store(hash, "y", 1, newSViv(rect->y), 0);
+            hv_store(hash, "width", 5, newSViv(rect->width), 0);
+            hv_store(hash, "height", 6, newSViv(rect->height), 0);
             av_push(retval, newRV_noinc((SV *) hash));
         }
 

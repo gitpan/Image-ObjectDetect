@@ -1,5 +1,8 @@
 Revision history for Perl Extention Image::ObjectDetect
 
+0.12 Sun Dec 19 17:09:52 JST 2010
+	- Support OpenCV version 2.1 and greater
+
 0.11 Fri Mar 09 00:13:58 JST 2007
 	- Added a sample script(eg/facedetect.pl)
 	- Refactored slightly.

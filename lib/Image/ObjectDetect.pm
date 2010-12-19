@@ -4,7 +4,7 @@ use warnings;
 use vars qw($VERSION @ISA @EXPORT);
 
 BEGIN {
-    $VERSION = '0.11';
+    $VERSION = '0.12';
     if ($] > 5.006) {
         require XSLoader;
         XSLoader::load(__PACKAGE__, $VERSION);
